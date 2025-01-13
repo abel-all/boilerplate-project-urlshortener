@@ -24,7 +24,6 @@ app.get('/api/hello', function(req, res) {
 app.post('/api/shorturl', (req, res) => {
   const url = req.body.url;
   const urlObj = new URL(url);
-  console.log(urlObj);
   if (urlObj.protocol !== "https:" && urlObj.protocol !== "http:") {
     return res.json({ error: 'invalid url' });
   }
